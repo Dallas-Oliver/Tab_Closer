@@ -20,6 +20,7 @@ body {
   margin: 0px;
   padding-right: 0px;
   padding-left: 0px;
+  font-family: "PT Sans", sans-serif;
 }
 
 .list {
@@ -30,7 +31,7 @@ body {
   margin: 0px;
   padding: 0px;
   cursor: pointer;
-  background-color: #f2f2f2;
+  background-color: #d9d9d9;
 }
 
 .sub-list {
@@ -45,10 +46,10 @@ body {
   list-style-type: none;
 }
 
-.item:hover {
-  background-color: #ebebeb;
+.marked {
+  color: #28853d;
 }
 
-.marked {
-  color: #69c9ff;
+.currentTabs:hover {
+  background-color: #c7c7c7;
 }

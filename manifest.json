@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "permissions": ["tabs"],
   "browser_action": {
-    "default_icon": "hello_extensions.png",
+    "default_icon": "can.png",
     "default_popup": "index.html"
   }
 }

@@ -1,3 +1,5 @@
+let choose;
+
 window.addEventListener("DOMContentLoaded", function() {
   const closeAll = document.querySelector("#close-all");
   closeAll.addEventListener("click", closeAllTabs);
@@ -5,7 +7,8 @@ window.addEventListener("DOMContentLoaded", function() {
   const refresh = document.getElementById("refresh");
   refresh.addEventListener("click", refreshSession);
 
-  const choose = document.getElementById("choose-tabs");
+  choose = document.getElementById("choose-tabs");
+
   choose.addEventListener("click", chooseTabsToKeepOpen);
 });
 
@@ -42,7 +45,7 @@ function chooseTabsToKeepOpen() {
       let li = document.createElement("li");
       li.textContent = tab.title;
       li.id = tab.title;
-      li.classList.add("item");
+      li.classList.add("item", "currentTabs");
 
       li.addEventListener("click", function() {
         if (tabsToKeep.indexOf(tab.id) === -1) {
@@ -64,13 +67,14 @@ function chooseTabsToKeepOpen() {
   let chooseList = document.getElementById("choose-list");
   chooseList.append(deleteButton);
   deleteButton.classList.add("btn");
-  deleteButton.classList.add("btn-info");
+  deleteButton.classList.add("btn-light");
 
   deleteButton.addEventListener(
     "click",
     async () => await tabSelector(tabsToKeep)
   );
 
+  choose.removeEventListener("click", chooseTabsToKeepOpen);
   return tabsToKeep;
 }
 
